@@ -9,7 +9,7 @@ import time
 
 # 페이지 설정
 st.set_page_config(
-    page_title="Le Mariage",
+    page_title="Le Mariage_tsettttt",
     page_icon="🔔",
     layout="wide"
 )
