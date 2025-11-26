@@ -36,7 +36,14 @@ def format_recommendations(recommendations, profile_info):
         print(f"\n{i}. {wine['name']}")
         print(f"   맛 프로파일: 단맛={wine['sweet']}, 산도={wine['acidity']}, "
               f"바디={wine['body']}, 탄닌={wine['tannin']}")
-        print(f"   유사도 거리: {wine['distance']:.4f}")
+        price_text = f"{int(wine['price']):,}" if wine.get('price') is not None else "정보 없음"
+        print(f"   가격: ₩{price_text}")
+        abv_text = f"{wine['abv']:.1f}%" if wine.get('abv') is not None else "정보 없음"
+        type_text = wine.get('type') or "정보 없음"
+        nation_text = wine.get('nation') or "정보 없음"
+        year_text = str(int(wine['year'])) if wine.get('year') is not None else "정보 없음"
+        print(f"   알코올 도수: {abv_text}")
+        print(f"   종류: {type_text} | 국가: {nation_text} | 빈티지: {year_text}")
     
     print("\n" + "="*80)
 

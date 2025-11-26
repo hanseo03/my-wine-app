@@ -58,7 +58,10 @@ def prepare_features(df):
         pd.DataFrame: 전처리된 데이터프레임 (name, sweet, acidity, body, tannin 포함)
     """
     # 필요한 컬럼만 선택
-    required_columns = ['name', 'sweet', 'acidity', 'body', 'tannin']
+    required_columns = [
+        'name', 'sweet', 'acidity', 'body', 'tannin',
+        'price', 'abv', 'type', 'nation', 'year'
+    ]
     
     # 컬럼이 존재하는지 확인
     missing_columns = [col for col in required_columns if col not in df.columns]
@@ -74,6 +77,16 @@ def prepare_features(df):
     
     # 결측치가 있는 행 제거
     df_processed = df_processed.dropna(subset=['sweet', 'acidity', 'body', 'tannin'])
+
+    # price를 숫자로 변환
+    df_processed['price'] = pd.to_numeric(df_processed['price'], errors='coerce')
+
+    # price 결측치 제거
+    df_processed = df_processed.dropna(subset=['price'])
+
+    # abv, year 숫자로 변환 (결측 허용)
+    df_processed['abv'] = pd.to_numeric(df_processed.get('abv'), errors='coerce')
+    df_processed['year'] = pd.to_numeric(df_processed.get('year'), errors='coerce')
     
     # name이 비어있는 행 제거
     df_processed = df_processed.dropna(subset=['name'])

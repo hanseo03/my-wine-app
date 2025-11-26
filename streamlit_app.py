@@ -44,6 +44,21 @@ def display_wine_profile(wine, index):
     """와인 프로파일을 바 형태로 표시"""
     with st.container():
         st.markdown(f"### {index}. {wine['name']}")
+        price_value = wine.get('price')
+        if price_value is not None:
+            price_formatted = f"₩{price_value:,.0f}"
+            st.markdown(f"**가격**: {price_formatted}")
+        metadata_lines = []
+        if wine.get('type'):
+            metadata_lines.append(f"**종류**: {wine['type']}")
+        if wine.get('nation'):
+            metadata_lines.append(f"**국가**: {wine['nation']}")
+        if wine.get('year'):
+            metadata_lines.append(f"**빈티지**: {int(wine['year'])}")
+        if wine.get('abv') is not None:
+            metadata_lines.append(f"**알코올**: {wine['abv']:.1f}%")
+        if metadata_lines:
+            st.markdown(" | ".join(metadata_lines))
         
         # 맛 프로파일 바 차트
         col1, col2 = st.columns(2)
@@ -62,7 +77,6 @@ def display_wine_profile(wine, index):
             st.markdown("**탄닌감 (Tannin)**")
             format_profile_bar(wine['tannin'], 5, "Tannin")
         
-        st.markdown(f"**유사도 거리**: {wine['distance']:.4f}")
         st.divider()
 
 

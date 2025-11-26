@@ -114,6 +114,11 @@ class WineRecommender:
                 'acidity': int(wine['acidity']),
                 'body': int(wine['body']),
                 'tannin': int(wine['tannin']),
+                'price': float(wine['price']),
+                'abv': float(wine['abv']) if pd.notna(wine['abv']) else None,
+                'type': wine['type'] if 'type' in wine and pd.notna(wine['type']) else None,
+                'nation': wine['nation'] if 'nation' in wine and pd.notna(wine['nation']) else None,
+                'year': int(wine['year']) if pd.notna(wine['year']) else None,
                 'distance': float(distances[0][i])
             })
         
