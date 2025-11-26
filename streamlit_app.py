@@ -86,9 +86,6 @@ def main():
     st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
         
         /* 전체 배경색 - 아주 약한 노란끼가 도는 흰색 */
         .stApp {
