@@ -86,6 +86,9 @@ def main():
     st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
         
         /* 전체 배경색 - 아주 약한 노란끼가 도는 흰색 */
         .stApp {
@@ -389,7 +392,7 @@ def main():
     st.markdown(
         """
         <div class="hero-section">
-            <h1 style='color: #D4AF37; margin-bottom: 0.5rem; font-style: italic; font-family: "Playfair Display", "Cormorant Garamond", serif; font-weight: 400; font-size: 4rem; letter-spacing: 2px;'>Le Mariage</h1>
+            <h1 style='color: #D4AF37; margin-bottom: 0.5rem; font-family: "Dancing Script", cursive; font-weight: 700; font-size: 5rem; letter-spacing: 2px;'>Le Mariage</h1>
             <p style='color: #1a1a1a; margin-top: 1rem; font-size: 1.5rem; font-weight: 300;'>완벽한 음식과 와인의 만남????</p>
             <p style='color: #666; margin-top: 0.5rem; font-size: 1.1rem;'>AI 기반 와인 추천 시스템으로 당신의 식사를 더욱 특별하게</p>
         </div>
@@ -405,7 +408,8 @@ def main():
     
     food_input = st.text_input(
         "음식 이름을 입력하세요",
-        placeholder="예: 파스타, 치킨, 초콜릿 케이크, 스테이크 등",
+        # placeholder="예: 파스타, 치킨, 초콜릿 케이크, 스테이크 등",
+        placeholder="",
         key="food_input"
     )
     
@@ -439,8 +443,8 @@ def main():
                 source = profile_info['source']
                 description = profile_info.get('description', '')
                 
-                source_text = "GPT API로 생성" if source == 'gpt' else "기본 프로파일 사용"
-                st.info(f"**프로파일 소스**: {source_text}")
+                #source_text = "GPT API로 생성" if source == 'gpt' else "기본 프로파일 사용"
+                #st.info(f"**프로파일 소스**: {source_text}")
                 
                 # 프로파일 바 차트
                 st.markdown("**목표 와인 프로파일:**")
