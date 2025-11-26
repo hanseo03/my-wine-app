@@ -9,7 +9,7 @@ import time
 
 # 페이지 설정
 st.set_page_config(
-    page_title="Le Mariage_tsettttt",
+    page_title="Le Mariage",
     page_icon="🔔",
     layout="wide"
 )
@@ -390,7 +390,7 @@ def main():
         """
         <div class="hero-section">
             <h1 style='color: #D4AF37; margin-bottom: 0.5rem; font-style: italic; font-family: "Playfair Display", "Cormorant Garamond", serif; font-weight: 400; font-size: 4rem; letter-spacing: 2px;'>Le Mariage</h1>
-            <p style='color: #1a1a1a; margin-top: 1rem; font-size: 1.5rem; font-weight: 300;'>완벽한 음식과 와인의 만남</p>
+            <p style='color: #1a1a1a; margin-top: 1rem; font-size: 1.5rem; font-weight: 300;'>완벽한 음식과 와인의 만남????</p>
             <p style='color: #666; margin-top: 0.5rem; font-size: 1.1rem;'>AI 기반 와인 추천 시스템으로 당신의 식사를 더욱 특별하게</p>
         </div>
         """,
